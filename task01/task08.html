@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>任务八：响应式布局</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<!-- 因为不是太多，直接写这了 -->
+	<style>
+		/*把所有的box都提取出来了，复杂页面还是要挨个设置比较好。或者用class*/
+		body * {
+			box-sizing: border-box;
+		}
+		/*和col的padding结合起来。*/
+		#contain {
+			width: 100%;
+			padding-right: 20px; 
+		}
+		/*这个选择器是看的别人的，设置了top和left的内边距*/
+		[class*='col-'] {
+			float: left;
+			padding: 20px 0 0 20px;
+		}
+		.col-md-1 {
+			width: 8.333333333333%;
+		}
+		.col-md-2 {
+			width: 16.66666666666%;
+		}
+		.col-md-3 {
+			width: 25%;
+		}
+		.col-md-4 {
+			width: 33.33333333333%;			
+		}
+		.col-md-6 {
+			width: 50%;
+		}
+		.col-md-8 {
+			width: 75%;
+		}
+		@media screen and (max-width: 768px) {
+			.col-sm-2 {
+				width: 16.66666666666%;
+			}
+			.col-sm-3 {
+				width: 25%;
+			}
+			.col-sm-6 {
+				width: 50%;
+			}
+			.col-sm-8 {
+				width: 66.66666666666%;
+			}
+			.col-sm-12 {
+				width: 100%;
+			}
+		}
+		/*想了半天没想起来，参考了别人的发现可以这样，瞬间思路打开了。*/
+		.content {
+			width: 100%;
+			height: 50px;
+			background: #eee;
+			border: 1px solid #999;
+		}
+		/*连接部分 非任务*/
+		#myAdress {
+			position: fixed;
+			bottom: 20px;
+			right: 20px;
+		}
+		#myAdress a {
+			display: block;
+			margin-top: 10px;
+			text-decoration: none;
+		}
+		#myAdress img {
+			width: 40px;
+			height: 40px;
+		}
+	</style>
+</head>
+<body>
+	<!--设置的一个链接，非任务-->
+	<div id="myAdress">
+		<a href="https://github.com/BinLiuX" target="_blank">
+			<img src="../images/github.png" alt="GitHub">
+		</a>
+		<a href="https://github.com/BinLiuX/BinLiuX.github.io/blob/master/IFE2016/task01/task08.html" target="_blank">
+			<img src="../images/html.png" alt="HTML">
+		</a>
+	</div>
+	<!-- 任务主体 -->
+	<div id="contain">
+		<div class="col-md-4 col-sm-6">
+			<div class="content"></div>
+		</div>
+		<div class="col-md-4 col-sm-6">
+			<div class="content"></div>
+		</div>
+		<div class="col-md-4 col-sm-12">
+			<div class="content"></div>
+		</div>
+		<div class="col-md-3 col-sm-3">
+			<div class="content"></div>
+		</div>
+		<div class="col-md-6 col-sm-6">
+			<div class="content"></div>
+		</div>
+		<div class="col-md-3 col-sm-3">
+			<div class="content"></div>
+		</div>
+		<div class="col-md-1 col-sm-2">
+			<div class="content"></div>
+		</div>
+		<div class="col-md-1 col-sm-2">
+			<div class="content"></div>
+		</div>
+		<div class="col-md-2 col-sm-8">
+			<div class="content"></div>
+		</div>
+		<div class="col-md-2 col-sm-3">
+			<div class="content"></div>
+		</div>
+		<div class="col-md-6 col-sm-3">
+			<div class="content"></div>
+		</div>
+	</div>
+</body>
+</html>

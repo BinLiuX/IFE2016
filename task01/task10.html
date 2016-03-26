@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<style>
+		.container {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: 100%;
+			height: 100vh;
+			padding: 20px;
+		}
+		.test {
+			width: 150px;
+			border: 1px solid #FF2A2A;
+		}
+		.test1 {
+			height: 120px;
+		}
+		.test2 {
+			height: 100px;
+		}
+		.test3 {
+			height: 40px;
+		}
+		.test4 {
+			height: 200px;
+			border: 1px solid #2A2AFF;
+		}
+		@media screen and (max-width: 640px) {
+			.container {
+				align-items: flex-start;
+				flex-wrap: wrap;
+			}
+			.test4 {
+				order: -1;
+			}
+		}
+		/*连接部分 非任务*/
+		#myAdress {
+			position: fixed;
+			bottom: 20px;
+			right: 20px;
+		}
+		#myAdress a {
+			display: block;
+			margin-top: 10px;
+			text-decoration: none;
+		}
+		#myAdress img {
+			width: 40px;
+			height: 40px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="test test1"></div>
+		<div class="test test2"></div>
+		<div class="test test3"></div>
+		<div class="test test4"></div>
+	</div>
+	<!--设置的一个链接，非任务-->
+	<div id="myAdress">
+		<a href="https://github.com/BinLiuX" target="_blank">
+			<img src="../images/github.png" alt="GitHub">
+		</a>
+		<a href="https://github.com/BinLiuX/BinLiuX.github.io/blob/master/IFE2016/task01/task10.html" target="_blank">
+			<img src="../images/html.png" alt="HTML">
+		</a>
+	</div>
+</body>
+</html>

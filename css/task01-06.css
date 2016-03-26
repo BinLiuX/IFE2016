@@ -1,0 +1,440 @@
+body {
+	width: 100%;
+	background: #335753;
+}
+/*设置了一个直接连接，到HTML和CSS的代码页面*/
+#myAdress {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+}
+#myAdress a {
+	display: block;
+	margin-top: 10px;
+	text-decoration: none;
+}
+#myAdress img {
+	width: 40px;
+	height: 40px;
+}
+#container {
+	width: 980px;
+	height: 1386px;
+	margin: 20px auto;
+	background: #fff;
+}
+#contain {
+	width: 892px;
+	height: auto;
+	margin: 0 auto;
+}
+/*头部内容，包括横线*/
+#head {
+	width: 100%;
+	height: 63px;
+	overflow: hidden;
+}
+#headTitle {
+	float: left;
+	width: 110px;
+	height: 61px;
+	font: 12px/100px SimHei;
+	color: #fff;
+	text-indent: 1em;
+	background: #D24780;
+}
+#headDate {
+	float: right;
+	height: 61px;
+	font: 12px/100px SimHei;
+	color: #d45d5c;
+}
+.line {
+	clear: both;
+	width: 892px;
+	height: 2px;
+	background: #938e8c;
+}
+/*主题内容，上下两个部分，
+但是尽量少使用了div嵌套，
+以及定位尽量不用position，
+感觉不如多用点DIV和定位好实现*/
+#main {
+	width: 100%;
+	margin: 34px 0;
+}
+/*第一个大的图像和蒙版部分*/
+#imgOne {
+	position: relative;
+	float: left;
+	width: 641px;
+	height: 301px;
+	overflow: hidden;
+}
+#imgLeft,
+#imgRight {
+	position: absolute;
+	top: 0;
+	width: 191px;
+	height: 301px;
+	opacity: 0.5;
+}
+#imgLeft {
+	left: 0;
+	background: #418342;
+}
+#imgRight{
+	right: 0;
+	background: #863565;
+}
+/*图片右侧的文字内容，命名不是太好用，
+还有就是文本处理有点问题。
+定位方面按照设计图感觉有出入，还是需要进行调整，
+用了margin负值不知道是否合适*/
+#about {
+	float: left;
+	width: 203px;
+	height: 301px;
+	margin-left: 48px;
+	overflow: hidden;
+}
+#abLine {
+	width: 203px;
+	height: 2px;
+	background: #cc8090;
+}
+/*文字下划线在首字母变化的情况下会和后面的下划线不一致
+使用了border，并用margin进行位置调整*/
+#txt1,
+#txt2Tit {
+	font: 14px/40px Microsoft YaHei;
+	color: #000;
+	border-bottom: 2px solid;
+	text-transform: uppercase;
+}
+#txt1 span,
+#txt2Tit span {
+	font-size: 24px;
+}
+#txt2 {
+	margin-top: -15px;
+}
+#txt2Main {
+	display: block;
+	font: 12px/10px KaiTi;
+	color: #676767;
+}
+#txt3 {
+	font: oblique 116px Microsoft YaHei;
+	color: #75b86b;
+	text-indent: -18px;
+}
+#txt4 {
+	margin-top: -8px;
+}
+#txt4Tit {
+	float: left;
+	font: 55px Microsoft YaHei;
+	color: #cc8091;
+}
+#txt4Top {
+	float: left;
+	margin-top: 25px;
+	font: 21px Microsoft YaHei;
+	color: #cc8091;
+}
+#txt4Bottom {
+	float: left;
+	margin-top: -6px;
+	font: 12px Microsoft YaHei;
+	color: #cc8091;
+}
+/*图片下面的三列文本，用像素其实更好一些*/
+#textW {
+	position: relative;
+	clear: both;
+	width: 641px;
+	height: 180px;
+	padding-top: 40px;
+	overflow: hidden;
+}
+#what,
+#when,
+#how {
+	float: left;
+	height: 180px;
+	font: 12px/16px SimSun;
+	color: #767777;
+	box-sizing: border-box;
+}
+#what {
+	width: 40%;
+	padding: 0 26px 0 0;
+}
+#what span {
+	display: block;
+	font: bold 16px Microsoft YaHei;
+	text-decoration: underline;
+	color: #418c59;
+	margin-bottom: 11px;
+}
+#when {
+	width: 32%;
+}
+#when span {
+	display: block;
+	font: bold 16px Microsoft YaHei;
+	text-decoration: underline;
+	color: #418c59;
+	margin-bottom: 11px;
+}
+#how {
+	width: 28%;
+	padding: 0 0 0 30px;
+	line-height: 20px;
+}
+#how span {
+	display: block;
+	font: bold 16px Microsoft YaHei;
+	text-decoration: underline;
+	color: #418c59;
+	margin-bottom: 9px;
+}
+/*百分比内容使用了绝对定位，
+然后感觉段落间距有点问题*/
+#percent {
+	position: absolute;
+	bottom: 0;
+	right: 40px;
+	width: 108px;
+	box-sizing: border-box;
+	opacity: 0.7;
+}
+#percent p {
+	font: 12px/16px Microsoft YaHei;
+	color: #231815;
+}
+#percent p span {
+	font-style: italic;
+	color: #cd4a48;
+}
+
+/*下半部分，没有设置整体div，直接分成俩浮动*/
+/*这个是左边的文本和图片*/
+#tech {
+	clear: both;
+	float: left;
+	width: 415px;
+	height: 606px;
+	margin-top: 70px;
+	overflow: hidden;
+}
+/*感觉用p不如div好设置*/
+#techMaintit {
+	font: bold 42px/16px SimHei;
+	color: #11456b;
+}
+#bigThe {
+	font: oblique 72px  SimHei;
+	color: #f5e327;
+}
+#techSubtit {
+	margin: 12px 0;
+	font: bold 33px SimHei;
+	color: #11456b;
+}
+#techLine {
+	width: 415px;
+	height: 2px;
+	margin: 0 0 12px 0;
+	background: #11456b;
+}
+/*文字的分段和缩进交给HTML来处理，不知道是否合适。
+同时因为父元素大小和字体之间的不协调，导致右边缘不平滑
+所以进行了调整*/
+/*设置了行高之后就可以了，真是蠢*/
+#techMain p {
+	background: #fff;
+	float: left;
+	font: 12px/16px SimSun;
+}
+#techMain span {
+	float: left;
+	/*margin: -12px 5px 0 0;*/
+	font: 70px/70px Microsoft YaHei;
+	color: #f5e327;
+}
+/*图片放入了文本中，同时进行了位置调整*/
+#techMain img {
+	float: right;
+	top: 120px;
+	right: 0;
+	width: 165px;
+	margin: 15px 6px 15px 15px;
+}
+
+/*下半部分的右边，设置了margin底部的值，保证和底部下划线的空白*/
+#list {
+	position: relative;
+	float: left;
+	width: 458px;
+	height: 606px;
+	margin: 70px 0 40px 19px;
+	overflow: hidden;
+}
+/*图片上的蒙版。使用了RGBA属性，同时把z-index设置了一下*/
+#front {
+	position: absolute;
+	top: 214px;
+	left: 0;
+	width: 458px;
+	height: 61px;
+	z-index: 99;
+	background: rgba(0, 0, 0, 0.6);
+	overflow: hidden;
+}
+/*蒙版上的内容，进行了一些位置调整
+因为img已经调整过像素了所以没有再进行属性设置*/
+#frontLine {
+	float: left;
+	width: 3px;
+	height: 44px;
+	margin-top: 8px;
+	margin-left: 35px;
+	background: #72b16a;
+}
+#frontTit {
+	float: left;
+	height: 61px;
+	margin-left: 12px;
+	font: 26px/61px Microsoft YaHei;
+	color: #fff;
+}
+#frontSubtit {
+	float: left;
+	height: 61px;
+	margin-left: 7px;
+	font: 12px/75px Microsoft YaHei;
+	letter-spacing: 140%;
+	color: #72b16a;
+}
+/*图片下的内容做成了一个div*/
+#listWrap {
+	width: 459px;
+	height: 318px;
+	margin-top: 27px;
+	background: #DDEADF;
+	overflow: hidden;
+}
+/*三行文字*/
+#listMain {
+	position: relative;
+	width: 439px;
+	height: 158px;
+	margin: 0 auto;
+}
+/*使用了CSS3进行居中*/
+#ulOne {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+/*段落间距设置不出来，不知道什么原因。所以用margin代替了*/
+#ulOne li {
+	position: relative;
+	width: 409px;
+	margin: 12px auto;
+	font: 16px SimSun;
+	color: #5a5b5b;
+}
+/*右边部分文字的设置*/
+.right {
+	float: right;
+	margin-top: 4px;
+	text-align: right;
+	font: oblique 12px SimSun;
+	color: #5a5b5b;
+}
+/*小三角是用CSS3画出来的，同时进行了位置调整*/
+.triangle {
+	display: inline-block;
+	margin: -8px 4px 0 8px;
+	border-left: 4px solid transparent;
+	border-right: 4px solid transparent;
+	border-bottom: 8px solid #6C6A6A;
+}
+/*左下角的粉色区域*/
+#zero {
+	position: absolute;
+	bottom: 0;
+	width: 260px;
+	height: 160px;
+	color: #fff;
+	background: #BB2424;
+}
+/*位置的设置*/
+#zeroZero {
+	float: left;
+	margin-left: 9px;
+	font: 110px/160px Microsoft YaHei;
+}
+#zeroLine {
+	float: left;
+	width: 2px;
+	height: 86px;
+	margin-top: 37px;
+	background: #fff;
+}
+#zeroOne {
+	float: left;
+	height: 48px;
+	margin-left: 6px;
+	padding-top: 42px;
+	font: oblique 21px/24px SimHei;
+}
+#helloWorld {
+	float: left;
+	width: 150px;
+	margin-top: 45px;
+	margin-left: 8px;
+	font: 12px/12px SimHei;
+}
+/*带引号的部分*/
+#moreHello {
+	position: absolute;
+	bottom: 35px;
+	right: 5px;
+	width: 178px;
+	height: 140px;
+	padding:10px; 
+	font: oblique 14px/16px SimHei;
+	color: #5a5b5b;
+	overflow: hidden;
+}
+/*最后的引号效果，不会处理，只能通过margin定位硬拼凑起来*/
+.quote {
+	display: inline-block;
+	width: 72px;
+	height: 72px;
+	font: 72px/72px SimHei;
+	color: #d45d5c;
+}
+#quoteOne {
+	margin-left: -36px;
+	margin-bottom: -36px;
+}
+#quoteTwo {
+	margin-top: -16px;
+	margin-left: 80px;
+}
+#helloMain {
+	display: inline-block;
+	margin-top: -52px;
+	text-indent: 36px;
+}
+/*底部的title，横线部分和头部的一样*/
+#foot p {
+	float: right;
+	font: 12px SimHei;
+	color: #d45d5c;
+}

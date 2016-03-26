@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>任务三：三栏式布局</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<style>
+		#container {
+			width: 90%;
+			min-width: 640px;
+			height: auto;
+			margin: 20px auto;
+			padding: 20px;
+			background: #eee;
+			border: 1px solid #999;
+			overflow: hidden;
+		}
+		#main {
+			float: left;
+			padding: 20px;
+			margin: 0 140px 0 220px;
+			background: #fff;
+		}
+		#left {
+			float: left;
+			width: 200px;
+			margin-left: -100%;
+			background: #fff;
+		}
+		#left img {
+			float: left;
+			width: 80px;
+			height: 80px;
+			margin: 20px;
+		}
+		#left h1 {
+			margin-top: 20px;
+		}
+		#right {
+			float: left;
+			width: 80px;
+			margin-left: -120px;
+			padding: 20px 20px 0 20px;
+			background: #fff;
+		}
+		#right img {
+			width: 80px;
+			height: 80px;
+			margin-bottom: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<p id="main">
+			团队的名字是NJUPT-WEB，其中NJUPT是南京邮电大学(Nanjing University Of Posts And Telecommunications)的英文缩写，WEB则是我们团队组建的原因。
+			<br>
+			<br>
+			我们是2016届的应届生，之前已经或多或少的接触过前端，适逢其会，百度前端技术学院春季班在我们毕业之前开始，于是志同道合者汇聚于此，在真正走向工作岗位之前对自身技术进行一次巩固，希望能够在这次学习中，管中窥豹习得国内一流互联网公司的一些精髓，养成一些良好的习惯。
+		</p>
+		<div id="left">
+			<img src="../images/teamlogo.jpg" alt="teamLogo" id="teamLogo">
+			<h1>NJUPT-WEB</h1>
+		</div>
+		<div id="right">
+			<img src="../images/mylogo.png" alt="" class="mylogo">
+			<img src="../images/mylogo.png" alt="" class="mylogo">
+			<img src="../images/mylogo.png" alt="" class="mylogo">
+			<img src="../images/mylogo.png" alt="" class="mylogo">
+		</div>
+	</div>
+</body>
+</html>

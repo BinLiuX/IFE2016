@@ -1,0 +1,707 @@
+/*设置了一个直接连接，到HTML和CSS的代码页面*/
+#myAdress {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	z-index: 999;
+}
+#myAdress a {
+	display: block;
+	margin-top: 10px;
+	text-decoration: none;
+}
+#myAdress img {
+	width: 40px;
+	height: 40px;
+}
+.contain {
+	width: 100%;
+	min-width: 1280px;
+	height: 4554px;
+}
+/*引入icon*/
+@font-face {
+    font-family: 'icomoon';
+    src:    url('../fonts/icomoon.eot?18z6k');
+    src:    url('../fonts/icomoon.eot?18z6k#iefix') format('embedded-opentype'),
+        url('../fonts/icomoon.ttf?18z6k') format('truetype'),
+        url('../fonts/icomoon.woff?18z6k') format('woff'),
+        url('../fonts/icomoon.svg?18z6k#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+/*导航栏部分，感觉写的比较繁琐。*/
+.nav {
+	width: 100%;
+	height: 57px;
+	overflow: hidden;
+}
+.newWorld {
+	float: left;
+	margin: 15px 0 0 45px;
+	font: 21px SimHei;
+	cursor: pointer;
+}
+.newWorld::before {
+	content: "\e900";
+	font-family: "icomoon";
+	color: #FC0A3C;
+	margin-right: 15px;
+}
+.navList {
+	float: right;
+	margin: 15px 25px 0 0;
+}
+.navList li {
+	float: left;
+	display: inline-block;
+	width: 65px;
+	height: 42px; 
+	margin-left: 35px;
+	font: 14px Microsoft YaHei;
+	text-align: center;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+/*因为是静态的，未使用HOVER*/
+.navList li:hover,
+.on {
+	color: #BE2E65;
+	border-bottom: 4px solid;
+}
+.login {
+	float: right;
+	margin: 15px 80px 0 0;
+	font: 14px Microsoft YaHei;
+	color: #FC0A3C;
+	cursor: pointer;
+}
+.login::before {
+	content: "\e912";
+	font-family: "icomoon";
+	margin-right: 5px;
+}
+
+/*NAV下的图片*/
+.imgTime {
+	width: 100%;
+	height: 690px;
+	background: url(../images/readingroom.jpg) no-repeat;
+	background-size: 100% 100%;
+	font-family: Microsoft YaHei;
+	overflow: hidden;
+}
+/*切图出来的数据，和题目里面给的设计图有些不同*/
+.time {
+	margin: 220px 0 0 115px;
+	font-size: 60px;
+	color: #fff;
+}
+.newTime {
+	width: 300px;
+	margin: 25px 0 60px 125px;
+	font-size: 21px;
+	color: #fff;
+}
+.start {
+	width: 330px;
+	height: 65px;
+	margin-left: 125px;
+	font-size: 30px;
+	line-height: 65px;
+	text-align: center;
+	color: #fff;
+	background: #e44;
+	cursor: pointer;
+}
+/*四个icon的部分，都用了float，导致后面必须也得用float了*/
+.icons {
+	position: relative;
+	float: left;
+	width: 25%;
+	height: 250px;
+	box-sizing: border-box;
+	font: 14px SimHei;
+	text-align: center;
+	overflow: hidden;
+}
+/*P的位置是可以用position的*/
+.icons p {
+	width: 100%;
+	height: 60px;
+	margin: 130px 0 60px;
+	padding: 0 80px;
+	border-right: 2px solid ;
+}
+.iconFour p {
+	border-right: none;
+}
+/*添加图标*/
+.iconOne::before {
+	content: "\e914";
+	position: absolute;
+	top: 50px;
+	left: 50%;
+	margin-left: -24px;
+	font: 48px "icomoon";
+	color: #CF0714;
+}
+.iconTwo::before {
+	content: "\e908";
+	position: absolute;
+	top: 50px;
+	left: 50%;
+	margin-left: -24px;
+	font: 48px "icomoon";
+	color: #CF0714;
+}
+.iconThree::before {
+	content: "\e911";
+	position: absolute;
+	top: 50px;
+	left: 50%;
+	margin-left: -24px;
+	font: 48px "icomoon";
+	color: #CF0714;
+}
+.iconFour::before {
+	content: "\e90c";
+	position: absolute;
+	top: 50px;
+	left: 50%;
+	margin-left: -24px;
+	font: 48px "icomoon";
+	color: #CF0714;
+}
+/*你不知道部分，和上面四个一样的设置。不过是用了position而不是margin*/
+.unknown {
+	position: relative;
+	float: left;
+	width: 100%;
+	height: 360px;
+	background: #eee;
+}
+.unknown::before {
+	content: "\e90f";
+	position: absolute;
+	top: 86px;
+	left: 50%;
+	margin-left: -57px;
+	font: 114px "icomoon";
+	color: #CF0714;
+}
+.unknown p {
+	position: relative;
+	top: 225px;
+	width: 100%;
+	height: 55px;
+	font: 54px SimHei;
+	text-align: center;
+}
+/*搜索栏部分*/
+.location {
+	position: relative;
+	float: left;
+	width: 100%;
+	height: 340px;
+	background: url(../images/task07location.png) no-repeat;
+	background-size: 100% 100%;
+	font-family: Microsoft YaHei;
+}
+.findOne {
+	margin-top: 50px;
+	font-size: 21px;
+	text-align: center;
+	color: #fff;
+}
+.locaLine {
+	width: 28px;
+	height: 2px;
+	margin: 8px auto 16px;
+	background: #fff;
+}
+.findTwo {
+	text-align: center;
+	color: #fff;
+}
+/*地址部分*/
+.search {
+	position: relative;
+	top: 50px;
+	display: table;
+	margin: 0 auto;
+}
+/*平行排列*/
+.search>li {
+	float: left;
+	margin-right: 30px;
+	list-style: none;
+	vertical-align: top;
+	background: #fff;
+	cursor: pointer;
+}
+.inputs {
+	position: relative;
+	width: 236px;
+	font-family: Microsoft YaHei;
+}
+/*选择框设置，用input模拟的*/
+.inputs>input {
+	float: left;
+	width: 190px;
+	height: 36px;
+	padding-left: 10px;
+	border: 0;
+	outline: 0;
+}
+/*箭头设置*/
+.array {
+	float: left;
+	width: 18px;
+	height: 18px;
+	margin: 9px;
+	background: #e44 url(../images/task07whitearray.png) no-repeat center;
+}
+/*去掉最后一个Li的外边距*/
+.search .locaSubmit {
+	margin: 0;
+}
+/*提交栏设置*/
+.locaSubmit input {
+	width: 236px;
+	background: #e44;
+	font: 14px/36px Microsoft YaHei;
+	color: #fff;
+	cursor: pointer;
+}
+/*下拉选框*/
+.sections {
+	display: inline-block;
+	width: 236px;
+	height: 26px;
+	line-height: 26px;
+	background: #eee;
+	list-style: none;
+}
+/*下拉选框的箭头*/
+.sections .array {
+	float: left;
+	width: 18px;
+	height: 18px;
+	margin: 4px 8px;
+	background:none;
+}
+/*设定特效,为了和效果图一致多了个onblur2*/
+.onblur2,
+.sections:hover {
+	background: #e44;
+}
+.onblur2 .array,
+.sections:hover .array {
+	background: url(../images/task07whitearray.png) no-repeat center;
+}
+/*设置边框*/
+.onblur1 {
+	border: 1px solid #e44;
+}
+
+
+/*活动内容*/
+.act {
+	float: left;
+	width: 100%;
+	height: 605px;
+	background: #eee;
+}
+/*居中*/
+.actWrap {
+	width: 1280px;
+	margin: 0 auto;
+}
+.acts {
+	float: left;
+	width: 219px;
+	height: 390px;
+	margin: 100px 35px 115px 0;
+	background: #fff;
+	box-sizing: border-box;
+}
+.act1 {
+	margin-left: 147px;
+}
+/*背景图设置*/
+.actImg {
+	width: 219px;
+	height: 337px;
+	padding: 10px;
+	background: url(../images/task07actives.png) no-repeat content-box;
+	cursor: pointer;
+}
+.actImg2 {
+	background-position: -255px -53px;
+}
+.actImg3 {
+	background-position: -512px 0;
+}
+.actImg4 {
+	background-position: -768px 0;
+}
+/*文本设置*/
+.actText {
+	width: 100%;
+	height: 53px;
+	background: #eee;
+	font: 12px/24px Microsoft YaHei;
+	text-align: center;
+	color: #bcbdbd;
+}
+/*拉开距离*/
+.actTit {
+	display: block;
+	padding-top: 12px;
+	font-size: 1.25em ;
+	color: #323333;
+	cursor: pointer;
+}
+/*第二个比较特殊*/
+.onActTit {
+	padding-top: 0;
+}
+/*宣传更多详情页面*/
+.moreDetails {
+	position: relative;
+	float: left;
+	width: 100%;
+	height: 567px;
+	overflow: hidden;
+}
+/*按像素分会宽度导致空白*/
+.imgFight {
+	position: relative;
+	float: left;
+	width: 66.6666666%;
+	height: 100%;
+}
+.imgFight img {
+	width: 100%;
+	height: 567px;
+}
+/*绝对定位到img上，img可以改成背景图*/
+.moreTit {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	font-family: Microsoft YaHei;
+	color: #fff;
+	text-align: center;
+}
+/*根据设计图做了一些位置移动*/
+.title1 {
+	font-size: 50px;
+}
+.title2 {
+	margin-top: -60px;
+	font-size: 158px;
+}
+.title3 {
+	margin-top: -22px;
+	font-size: 22px;
+}
+.title4 {
+	font-size: 22px;
+}
+
+/*新世界部分*/
+.moreIfo {
+	position: relative;
+	float: left;
+	width: 33.3333333%;
+	height: 567px;
+}
+/*居中*/
+.mainCenter {
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 300px;
+	font-family: Microsoft YaHei;
+	text-align: center;
+}
+/*依次设置*/
+.moreIfoTit {
+	font-size: 22px;
+	margin-bottom: 28px;
+	cursor: pointer;
+}
+.moreIfoTit span {
+	color: #e44;
+}
+.width300 {
+	line-height: 34px;
+	color: #ACA3A3;
+}
+/*红色边框按钮*/
+.detail {
+	width: 106px;
+	height: 35px;
+	margin: 45px auto 0;
+	line-height: 35px;
+	color: #e44;
+	border: 1px solid;
+	cursor: pointer;
+}
+/*三个圆点*/
+.circles li {
+	display: inline-block;
+	width: 11px;
+	height: 12px;
+	margin: 20px 10px 0;
+	background: url(../images/task07cir1.png);
+	cursor: pointer;
+}
+.circles li:first-child {
+	background: url(../images/task07cir2.png);
+}
+/*指向三角*/
+.trangleLeft {
+	position: absolute;
+	top: 50%;
+	left: 2px;
+	transform: translate(-100%,-50%);
+	width: 26px;
+	height: 31px;
+	z-index: 99;
+	background: url(../images/task07trangle.png);
+}
+/*三列布局*/
+.infList {
+	float: left;
+	width: 100%;
+	height: 521px;
+	overflow: hidden;
+}
+/*总的设置*/
+.informList {
+	position: relative;
+	float: left;
+	width: 33.3333%;
+	height: 521px;
+	font: 22px/30px SimHei;
+	text-align: center;
+}
+/*第一列背景色*/
+.list1 {
+	background: #e44;
+}
+/*使文字居中*/
+.listWrap {
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	color: #fff;
+}
+/*横线*/
+.listContent1 {
+	width: 40px;
+	height: 2px;
+	margin: 25px auto;
+	background: #fff;
+}
+/*按钮*/
+.listContent2 {
+	width: 170px;
+	height: 45px;
+	margin: 0 auto;
+	line-height: 45px;
+	border: 1px solid ;
+	cursor: pointer;
+}
+/*第二列颜色不同*/
+.list2 .listWrap {
+	color: #353535;
+}
+.list2 .listContent2 {
+	color: #e44;
+}
+/*三角*/
+.trangleRight {
+	position: absolute;
+	top: 50%;
+	right: 1px;
+	transform: translate(100%,-50%);
+	width: 26px;
+	height: 31px;
+	z-index: 99;
+	background: url(../images/task07trangle2.png);
+}
+/*第三列背景图*/
+.list3 {
+	background: url(../images/schiller.jpg) no-repeat ;
+	background-size: cover;
+	cursor: pointer;
+}
+
+.joinUs {
+	float: left;
+	width: 100%;
+	height: 750px;
+	color: #6C6D6D;
+	overflow: hidden;
+}
+/*防止变形*/
+.joinWrap {
+	width: 1280px;
+	margin: 0 auto;
+}
+.join1Wrap {
+	width: 100%;
+	height: 305px;
+	overflow: hidden;
+}
+.join1 {
+	width: 33%;
+	height: 103px;
+	margin: 101px auto;
+	text-align: center;
+}
+.join1Tit {
+	font: 21px Microsoft YaHei;
+}
+.join1Line {
+	width: 40px;
+	height: 2px;
+	margin: 10px auto;
+	background: #e44;
+
+}
+.join2Wrap {
+	float: left;
+	width: 34%;
+	height: 285px;
+	padding-left: 135px;
+	box-sizing: border-box;
+}
+.join3Wrap {
+	float: left;
+	width:66%;
+	height: 285px; 
+	padding-left: 70px;
+	box-sizing: border-box;
+}
+.join2Main1 {
+	clear: both;
+	margin: 0 0 25px 0;
+	font: 14px SimHei;
+}
+.join2Main2 {
+	font: 12px SimSun;
+}
+.join2Main3 {
+	float: right;
+	margin: 0 5px 25px 0;
+	font: oblique 12px Microsoft YaHei;
+	cursor: pointer;
+}
+.arrayDown {
+	display: inline-block;
+	width: 13px;
+	height: 7px;
+	background: url(../images/task07array.png) no-repeat;
+}
+
+.inform {
+	width: 311px;
+	height: 41px;
+	margin:0 18px 12px 0;
+	padding-left: 10px;
+	border: 0;
+	background-color: #eee;
+}
+#desc {
+	width: 644px;
+	height: 121px;
+	padding: 10px;
+	border: 0;
+	background-color: #eee;
+}
+.submit {
+	width: 644px;
+	height: 41px;
+	margin-top: 14px;
+	border: 0;
+	font: 14px SimHei;
+	cursor: pointer;
+}
+/*联系我们*/
+.connectWrap {
+	float: left;
+	width: 100%;
+	height: 361px;
+	color: #fff;
+	background: #32363e;
+	text-align: center;
+}
+.connect {
+	width: 470px;
+	margin: 90px auto 28px;
+	font: 12px Microsoft YaHei;
+}
+.connect span {
+	display: block;
+	margin: 0 0 10px;
+	font: 21px SimHei;
+}
+.conCenter input {
+	width: 431px;
+	height: 41px;
+	padding-left: 10px;
+}
+.conCenter button {
+	width: 81px;
+	height: 41px;
+	margin-left: -5px;
+	border: 0;
+	background: #6f7178;
+	font: 12px Microsoft YaHei;
+	color: #eee;
+	letter-spacing: 5px;
+	cursor: pointer;
+}
+.conCenter ul {
+	margin-left: -25px;
+}
+.conCenter li {
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	margin: 30px 0 0 27px;
+	font-family: 'icomoon';
+	font-size: 25px;
+	cursor: pointer;
+}
+/*foot*/
+.foot {
+	clear: both;
+	width: 100%;
+	height: 58px;
+	background: #2f3038;
+}
+.footLeft {
+	float: left;
+	width: 66px;
+	height: 12px;
+	margin: 27px 0 0  99px;
+	font: 12px SinSun;
+	color: #fff;
+}
+.footRight {
+	float: right;
+	width: 66px;
+	height: 12px;
+	margin: 27px 40px 0 0  ;
+	font: 12px SinSun;
+	color: #fff;
+}
