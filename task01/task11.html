@@ -101,13 +101,11 @@
 		}
 		/*flex布局*/
 		.tag {
-			display: -moz-box;  /* Firefox */ 
-			display: -ms-flexbox;    /* IE10 */ 
-			display: -webkit-box;    /* Safari */  
-			display: -webkit-flex;    /* Chrome, WebKit */ 
-			display: box;  
-			display: flexbox;  
-			display: flex; 
+			display: -webkit-box; /* 老版本语法: Safari, iOS, Android browser, older WebKit browsers. */
+			display: -moz-box; /* 老版本语法: Firefox (buggy) */
+			display: -ms-flexbox; /* 混合版本语法: IE 10 */
+			display: -webkit-flex; /* 新版本语法: Chrome 21+ */
+			display: flex; /* 新版本语法: Opera 12.1, Firefox 22+ */
 			width: 100%;
 			padding: 0.8rem 0.5rem;
 			box-sizing: border-box;
@@ -115,7 +113,10 @@
 		}
 		/*居中*/
 		.smImg {
-			flex: 1;
+			-moz-box-flex: 1; /*Firefox*/
+			-webkit-box-flex: 1; /*Safari,Opera,Chrome*/
+			box-flex: 1;
+			display: block;
 			margin: auto;
 		}
 		/*调整图片大小，实际应该在图片应用之前就用PS做好尺寸*/
@@ -135,13 +136,11 @@
 		}
 		/*分栏*/
 		.cols {
-			display: -moz-box;  /* Firefox */ 
-			display: -ms-flexbox;    /* IE10 */ 
-			display: -webkit-box;    /* Safari */  
-			display: -webkit-flex;    /* Chrome, WebKit */ 
-			display: box;  
-			display: flexbox;  
-			display: flex; 
+			display: -webkit-box; /* 老版本语法: Safari, iOS, Android browser, older WebKit browsers. */
+			display: -moz-box; /* 老版本语法: Firefox (buggy) */
+			display: -ms-flexbox; /* 混合版本语法: IE 10 */
+			display: -webkit-flex; /* 新版本语法: Chrome 21+ */
+			display: flex; /* 新版本语法: Opera 12.1, Firefox 22+ */
 			width: 100%;
 			padding: 0.8rem 0.5rem;
 			box-sizing: border-box;
@@ -149,7 +148,10 @@
 			overflow: hidden;
 		}
 		.col {
-			flex:1;
+			-moz-box-flex: 1; /*Firefox*/
+			-webkit-box-flex: 1; /*Safari,Opera,Chrome*/
+			box-flex: 1;
+			display: block;
 			border-right: 2px solid #eee;
 		}
 		.col img {
