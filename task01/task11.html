@@ -5,8 +5,7 @@
 	<title>Document</title>
 	<link rel="stylesheet" href="../css/reset.css">
 	<meta http-equiv="Cache-Control" content="no-transform" /> 
-	<meta http-equiv="Cache-Control" content="no-siteapp" />
-	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,user-scalable=no">
     <style>
     /*代码比较少，直接看吧*/
     /*先对不同屏幕进行媒体查询 设置html基础的字体大小，全文按照rem设置*/
@@ -76,15 +75,17 @@
 		}
 		/*导航flex兼容性有问题*/
 		.nav {
-			display: -moz-box;  /* Firefox */ 
-			display: -ms-flexbox;    /* IE10 */ 
-			display: -webkit-box;    /* Safari */  
-			display: -webkit-flex;    /* Chrome, WebKit */ 
-			display: box;  
-			display: flexbox;  
+			display: -webkit-box; /* 老版本语法: Safari, iOS, Android browser, older WebKit browsers. */
+			display: -moz-box; /* 老版本语法: Firefox (buggy) */
+			display: -ms-flexbox; /* 混合版本语法: IE 10 */
+			display: -webkit-flex; /* 新版本语法: Chrome 21+ */
+			display: flex; /* 新版本语法: Opera 12.1, Firefox 22+ */
 		}
 		.nav a {
-			flex: 1;
+			-moz-box-flex: 1; /*Firefox*/
+			-webkit-box-flex: 1; /*Safari,Opera,Chrome*/
+			box-flex: 1;
+			display: block;
 			text-align: center;
 			box-sizing: border-box;
 			text-decoration: none;
