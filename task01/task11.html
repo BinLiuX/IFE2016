@@ -76,7 +76,13 @@
 		}
 		/*导航*/
 		.nav {
-			display: flex;
+			display: -moz-box;  /* Firefox */ 
+			display: -ms-flexbox;    /* IE10 */ 
+			display: -webkit-box;    /* Safari */  
+			display: -webkit-flex;    /* Chrome, WebKit */ 
+			display: box;  
+			display: flexbox;  
+			display: flex;   
 		}
 		.nav a {
 			flex: 1;
@@ -123,7 +129,13 @@
 		}
 		/*分栏*/
 		.cols {
-			display: flex;
+			display: -moz-box;  /* Firefox */ 
+			display: -ms-flexbox;    /* IE10 */ 
+			display: -webkit-box;    /* Safari */  
+			display: -webkit-flex;    /* Chrome, WebKit */ 
+			display: box;  
+			display: flexbox;  
+			display: flex;   
 			width: 100%;
 			padding: 0.8rem 0.5rem;
 			box-sizing: border-box;
