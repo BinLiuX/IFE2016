@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		/*table*/
+		table th {
+			text-align: left;
+			background: #141010;
+			color: #fff;
+		}
+		table tr:nth-child(2n+1) {
+			background: #9C9696;
+		}
+		table tr:nth-child(2),
+		table tr:nth-child(3),
+		table tr:nth-child(4) {
+			color: #CC0E41;
+		}
+		/*input*/
+		input {
+			width: 150px;
+			margin: 50px;
+			transition: width 2s;
+		}
+		input:focus {
+			width: 300px;
+		}
+		/*轮播图*/
+		.con {
+			position: relative;
+			width: 350px;
+			height: 200px;
+			overflow: hidden;
+		}
+		.wrap {
+			position: absolute;
+			width: 1050px;
+			transition: all 1s ;
+		}
+		.test {
+			float: left;
+			width: 350px;
+			height: 200px;
+		}
+		.test1 {
+			background: #9C1F1F;
+		}
+		.test2 {
+			background: #644D60;
+		}
+		.test3 {
+			background: #D44208;
+		}
+		#test1:target~.wrap{
+		    left: 0
+		}
+		#test2:target~.wrap{
+		    left: -350px;
+		}
+		#test3:target~.wrap{
+		    left: -700px;
+		}
+		.arc {
+			position: absolute;
+			bottom: 0;
+			right: -2px;
+			z-index: 99;
+		}
+		.arc a {
+			float: left;
+			width: 30px;
+			height: 30px;
+			margin-right: 2px;
+			background: rgba(255,255,255,.5);
+			font: 16px/30px Microsoft YaHei;
+			color: #fff;
+			text-decoration: none;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<table>
+		<tr>
+			<th>排名</th>
+			<th>网站</th>
+			<th>热度</th>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>百度前端技术学院</td>
+			<td>12333</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>百度前端技术学院</td>
+			<td>12333</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>百度前端技术学院</td>
+			<td>12333</td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>百度前端技术学院</td>
+			<td>12333</td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td>百度前端技术学院</td>
+			<td>12333</td>
+		</tr>
+		<tr>
+			<td>6</td>
+			<td>百度前端技术学院</td>
+			<td>12333</td>
+		</tr>
+		<tr>
+			<td>7</td>
+			<td>百度前端技术学院</td>
+			<td>12333</td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td>百度前端技术学院</td>
+			<td>12333</td>
+		</tr>
+		<tr>
+			<td>9</td>
+			<td>百度前端技术学院</td>
+			<td>12333</td>
+		</tr>
+		<tr>
+			<td>10</td>
+			<td>百度前端技术学院</td>
+			<td>12333</td>
+		</tr>
+	</table>
+	<input type="text">
+	<div class="con">
+		<span id="test1"></span>
+		<span id="test2"></span>
+		<span id="test3"></span>
+		<div class="wrap">
+			<div class="test1 test"></div>
+			<div class="test2 test"></div>
+			<div class="test3 test"></div>
+		</div>
+		<div class="arc">
+			<a href="#test1">1</a>
+			<a href="#test2">2</a>
+			<a href="#test3">3</a>
+		</div>
+
+	</div>
+</body>
+</html>
