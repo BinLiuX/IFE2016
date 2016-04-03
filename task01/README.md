@@ -23,3 +23,10 @@
 ####2016年3月20日21:23:09
 1. [任务十：Flexbox](http://liubinweb.com/IFE2016/task01/task10.html)  
 +flexbox,主要还是不熟悉，得多练练
+
+####2016年4月3日16:01:43
+1. [任务十一：移动布局](http://liubinweb.com/IFE2016/task01/task11.html) 
++ 使用flex和rem 未对不支持的浏览器做兼容，比如微信内置，QQ内置
+####2016年4月3日19:09:20
+1. [任务十二：移动布局](http://liubinweb.com/IFE2016/task01/task12.html) 
++ target的使用方法
