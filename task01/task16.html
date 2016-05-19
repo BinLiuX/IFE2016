@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div>
+		<label>城市名称：<input id="aqi-city-input" type="text" value="背景"></label><br>
+		<label>空气质量指数：<input id="aqi-value-input" type="text" value="12"></label><br>
+		<button id="add-btn">确认添加</button>
+	</div>
+	<table id="aqi-table">
+		<!-- 
+		<tr>
+			<td>城市</td><td>空气质量</td><td>操作</td>
+		</tr>
+		<tr>
+			<td>北京</td><td>90</td><td><button>删除</button></td>
+		</tr>
+		<tr>
+			<td>北京</td><td>90</td><td><button>删除</button></td>
+		</tr>
+		-->
+	</table>
+	<script>
+		/**
+		 * aqiData，存储用户输入的空气指数数据
+		 * 示例格式：
+		 * aqiData = {
+		 *    "北京": 90,
+		 *    "上海": 40
+		 * };
+		 */
+		var aqiData = {};
+
+		/**
+		 * 从用户输入中获取数据，向aqiData中增加一条数据
+		 * 然后渲染aqi-list列表，增加新增的数据
+		 */
+		function addAqiData() {
+			var a = document.querySelector("#aqi-city-input").value.trim();
+			var b = document.querySelector("#aqi-value-input").value.trim();
+			if (!a.match(/^[A-Za-z\u4e00-\u9FA5]+$/)) {
+				alert("Error");
+				return;
+			}
+			if (!b.match(/^\d+$/)) {
+				alert("Number");
+				return;
+			}
+			aqiData[a] = parseInt(b);
+			// console.log(aqiData);
+		}
+
+		/**
+		 * 渲染aqi-table表格
+		 */
+		function renderAqiList() {
+			var tab = document.getElementById('aqi-table');
+			// tab.innerHTML = "";
+			//tr这种是固定的，不要放到循环里，会每次都赋值；
+			var tr = "<tr><td>城市</td><td>空气质量</td><td>操作</td></tr>";
+			for(var key in aqiData){
+				//这样写也可以，搭配上面的tab.innerHTML = "";但是不够简洁			
+				// if (key) {
+				// 	tr += "<tr><td>" + key + "</td><td>" + aqiData[key] + "</td><td><button>删除</button></td>";
+				// 	tab.innerHTML = tr;
+				// }
+				tr += "<tr><td>" + key + "</td><td>" + aqiData[key] + "</td><td><button>删除</button></td>";
+			}
+			//for 中的key是全局变量；最后赋值才可以在对象为空的情况下添加空白；书写更简洁
+			tab.innerHTML = key ? tr : "";
+	}
+
+		/**
+		 * 点击add-btn时的处理逻辑
+		 * 获取用户输入，更新数据，并进行页面呈现的更新
+		 */
+		function addBtnHandle() {
+		  addAqiData();
+		  renderAqiList();
+		}
+
+		/**
+		 * 点击各个删除按钮的时候的处理逻辑
+		 * 获取哪个城市数据被删，删除数据，更新表格显示
+		 */
+		function delBtnHandle(target) {
+		  // do sth.
+		  var del = target.parentElement.parentElement;
+		  var city = del.children[0].innerHTML;
+		  delete aqiData[city];
+		  renderAqiList();
+		  // console.log(aqiData);
+		}
+
+		function init() {
+
+		  // 在这下面给add-btn绑定一个点击事件，点击时触发addBtnHandle函数
+			document.querySelector("#add-btn").addEventListener("click",addBtnHandle);
+			// 想办法给aqi-table中的所有删除按钮绑定事件，触发delBtnHandle函数
+			// 建议添加ID给button，或者添加dataset，方便获取dataset.city
+			document.querySelector("#aqi-table").addEventListener("click",function (e) {
+				if(e.target && e.target.nodeName === "BUTTON"){
+					delBtnHandle(e.target);
+				}
+			});
+		}
+
+		init();
+	</script>
+</body>
+</html>
